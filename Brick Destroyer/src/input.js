@@ -17,6 +17,8 @@ export default class InputHandler {
         case 32:
           game.start();
           break;
+
+        default:
       }
     });
 
@@ -29,6 +31,8 @@ export default class InputHandler {
         case 39:
           if (paddle.speed > 0) paddle.stop();
           break;
+
+        default:
       }
     });
   }
