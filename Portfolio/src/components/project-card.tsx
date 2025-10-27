@@ -35,7 +35,7 @@ export function ProjectCard({ project }: { project: Project }) {
               View
             </button>
             {project.href && (
-              <a href={project.href} target="_blank" rel="noreferrer" className="px-3 py-1.5 rounded-md border hover:bg-secondary/70 transition">
+              <a href={project.href} target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 rounded-md border hover:bg-secondary/70 transition">
                 Open Link
               </a>
             )}
@@ -56,7 +56,7 @@ export function ProjectCard({ project }: { project: Project }) {
           )}
           {project.href && (
             <p className="pt-2">
-              <a href={project.href} target="_blank" rel="noreferrer" className="underline">
+              <a href={project.href} target="_blank" rel="noopener noreferrer" className="underline">
                 Visit project
               </a>
             </p>

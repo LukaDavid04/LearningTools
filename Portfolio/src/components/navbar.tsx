@@ -1,6 +1,15 @@
 import { Link, useLocation } from "react-router-dom";
-import { Home, Briefcase, Rocket, NotebookPen, Github, Linkedin, Mail } from "lucide-react";
-import avatar from "@/assets/placeholder-avatar.svg";
+import {
+  Home,
+  Briefcase,
+  Rocket,
+  NotebookPen,
+  Github,
+  Linkedin,
+  Mail,
+} from "lucide-react";
+// import avatar from "@/assets/placeholder-avatar.svg";
+import headshot from "@/assets/headShot.png";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 const NAV = [
@@ -19,11 +28,22 @@ export function Navbar() {
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-3">
             <div className="h-9 w-9 rounded-xl bg-gradient-to-tr from-blue-500 to-violet-500 p-[2px]">
-              <img src={avatar} alt="Luka" className="h-full w-full rounded-[10px] object-cover" />
+              <img
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
+                src={headshot}
+                alt="Luka"
+                className="h-full w-full rounded-[10px] object-cover"
+              />
             </div>
             <div>
-              <h1 className="text-sm font-semibold leading-tight">Luka David</h1>
-              <p className="text-xs text-muted-foreground">Software Engineer — AI, Cloud, Full-Stack</p>
+              <h1 className="text-sm font-semibold leading-tight">
+                Luka David
+              </h1>
+              <p className="text-xs text-muted-foreground">
+                Software Engineer — AI, Cloud, Full-Stack
+              </p>
             </div>
           </div>
 
@@ -36,7 +56,9 @@ export function Navbar() {
                   key={n.to}
                   to={n.to}
                   className={`flex items-center gap-2 px-4 py-1.5 rounded-full text-sm border transition-all duration-150 ${
-                    active ? "bg-foreground text-background border-foreground" : "bg-secondary/60 hover:bg-secondary/80 border-border/40"
+                    active
+                      ? "bg-foreground text-background border-foreground"
+                      : "bg-secondary/60 hover:bg-secondary/80 border-border/40"
                   }`}
                 >
                   <Icon className="h-4 w-4" />
@@ -48,13 +70,29 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-3 shrink-0">
-          <a aria-label="GitHub" href="https://github.com/LukaDavid04" target="_blank" rel="noreferrer" className="p-2 border rounded-md hover:bg-secondary/60 transition">
+          <a
+            aria-label="GitHub"
+            href="https://github.com/LukaDavid04"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 border rounded-md hover:bg-secondary/60 transition"
+          >
             <Github className="h-4 w-4" />
           </a>
-          <a aria-label="LinkedIn" href="https://linkedin.com/in/" target="_blank" rel="noreferrer" className="p-2 border rounded-md hover:bg-secondary/60 transition">
+          <a
+            aria-label="LinkedIn"
+            href="https://linkedin.com/in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 border rounded-md hover:bg-secondary/60 transition"
+          >
             <Linkedin className="h-4 w-4" />
           </a>
-          <a aria-label="Email" href="mailto:LukaDavid307@gmail.com" className="p-2 border rounded-md hover:bg-secondary/60 transition">
+          <a
+            aria-label="Email"
+            href="mailto:LukaDavid307@gmail.com"
+            className="p-2 border rounded-md hover:bg-secondary/60 transition"
+          >
             <Mail className="h-4 w-4" />
           </a>
           <ThemeToggle />
