@@ -8,13 +8,11 @@ import {
   Linkedin,
   Mail,
 } from "lucide-react";
-// import avatar from "@/assets/placeholder-avatar.svg";
-import headshot from "@/assets/headShot.png";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 const NAV = [
   { to: "/", label: "Home", icon: Home },
-  { to: "/experience", label: "Co-op & Experience", icon: Briefcase },
+  { to: "/experience", label: "Experience", icon: Briefcase },
   { to: "/projects", label: "Passion Projects", icon: Rocket },
   { to: "/journal", label: "Journal", icon: NotebookPen },
 ];
@@ -27,22 +25,16 @@ export function Navbar() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-start justify-between gap-4">
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded-xl bg-gradient-to-tr from-blue-500 to-violet-500 p-[2px]">
-              <img
-                loading="lazy"
-                decoding="async"
-                fetchPriority="low"
-                src={headshot}
-                alt="Luka"
-                className="h-full w-full rounded-[10px] object-cover"
-              />
-            </div>
             <div>
-              <h1 className="text-sm font-semibold leading-tight">
+              <h1 className="text-2xl font-semibold leading-tight">
                 Luka David
               </h1>
-              <p className="text-xs text-muted-foreground">
-                Software Engineer — AI, Cloud, Full-Stack
+              <p className="text-sm text-muted-foreground">
+                <span className="font-semibold text-foreground">
+                  Software Engineer
+                </span>{" "}
+                <span>&nbsp;</span>
+                AI, Cloud, Full-Stack
               </p>
             </div>
           </div>

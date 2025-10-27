@@ -11,11 +11,11 @@
   --muted-foreground: 215.4 16.3% 46.9%;
   --border: 214.3 31.8% 91.4%;
   --input: 214.3 31.8% 91.4%;
-  --primary: 221.2 83.2% 53.3%;
+  --primary: 142 70% 45%;
   --primary-foreground: 210 40% 98%;
   --secondary: 210 40% 96.1%;
   --secondary-foreground: 222.2 47.4% 11.2%;
-  --ring: 221.2 83.2% 53.3%;
+  --ring: 142 70% 45%;
   --radius: 14px;
 }
 
@@ -40,8 +40,8 @@ body::before {
   content: '';
   position: fixed;
   inset: -10%;
-  background: radial-gradient(1200px 600px at 10% -10%, rgba(59,130,246,0.25), transparent 50%),
-              radial-gradient(800px 400px at 90% 10%, rgba(168,85,247,0.25), transparent 50%),
+  background: radial-gradient(1200px 600px at 10% -10%, rgba(16,185,129,0.25), transparent 50%),
+              radial-gradient(800px 400px at 90% 10%, rgba(5,150,105,0.20), transparent 50%),
               radial-gradient(1000px 500px at 50% 110%, rgba(16,185,129,0.15), transparent 50%);
   filter: blur(40px);
   z-index: -1;

@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Layout() {
   return (
@@ -21,7 +20,7 @@ export function Layout() {
           <Outlet />
         </main>
         <Footer />
-        <ThemeToggle />
+        
       </div>
     </>
   );

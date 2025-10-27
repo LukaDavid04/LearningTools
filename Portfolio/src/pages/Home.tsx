@@ -1,7 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-// import avatar from "@/assets/placeholder-avatar.svg";
-import headshot from "@/assets/headShot.png";
+import headshot from "@/assets/TennisHeadshot2.jpg";
 import { PROFILE } from "@/lib/data/profile";
 import { motion } from "framer-motion";
 
@@ -16,8 +15,8 @@ export function Home() {
         >
           <Card className="overflow-hidden">
             <div className="relative">
-              <div className="h-48 sm:h-64 bg-gradient-to-br from-blue-500/40 via-violet-500/30 to-emerald-400/40 animate-shimmer bg-[length:200%_100%]" />
-              <div className="absolute -bottom-10 left-6 h-24 w-24 sm:h-28 sm:w-28 rounded-3xl ring-2 ring-white/70 dark:ring-black/40 shadow-xl overflow-hidden flex items-center justify-center">
+              <div className="h-48 sm:h-58 bg-gradient-to-br from-blue-500/40 via-violet-500/30 to-emerald-400/40 animate-shimmer bg-[length:200%_100%]" />{" "}
+              <div className="absolute -bottom-10 left-6 h-40 w-40 sm:h-29 sm:w-29 rounded-3xl ring-2 ring-white/70 dark:ring-black/40 shadow-xl overflow-hidden flex items-center justify-center">
                 <img
                   loading="lazy"
                   decoding="async"
@@ -28,7 +27,7 @@ export function Home() {
                 />
               </div>
             </div>
-            <CardContent className="pt-12 sm:pt-14">
+            <CardContent className="pt-16 sm:pt-20">
               <h1 className="text-3xl font-semibold tracking-tight">
                 {PROFILE.name}
               </h1>
@@ -62,7 +61,7 @@ export function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.35 }}
               >
-                <Card>
+                <Card className="shadow-md hover:shadow-[0_6px_24px_rgba(16,185,129,0.25)] transition-all duration-300">
                   <CardHeader className="pb-2">
                     <CardTitle className="text-base">{b.title}</CardTitle>
                   </CardHeader>
