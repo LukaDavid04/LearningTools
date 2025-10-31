@@ -1,4 +1,20 @@
-export const JOURNAL = [
+export type JournalEntryComment = {
+  paragraph: number;
+  wordIndex: number;
+  text: string;
+};
+
+export type JournalEntryType = {
+  slug: string;
+  title: string;
+  date: string;
+  tags: readonly string[];
+  excerpt: string;
+  content: string;
+  comments?: readonly JournalEntryComment[];
+};
+
+export const JOURNAL: readonly JournalEntryType[] = [
   {
     slug: "reliable-ai-features",
     title: "Achieving a Dream Goal",
@@ -9,6 +25,13 @@ export const JOURNAL = [
     content: `
 In first year, I used to get up at 5 am for practice. The cafeteria was closed, so I would bring a mug of cheerios with me as I waited in the freezing (literally) temperatures to get picked up by my best friend and club president Ryan.
     `.trim(),
+    comments: [
+      {
+        paragraph: 0,
+        wordIndex: 2,
+        text: "I remember laughing about how cold those early mornings felt.",
+      },
+    ],
   },
   {
     slug: "good-engineering-handoff",
@@ -35,5 +58,3 @@ Warm up with a trivial repro. Hit a few simple shots. Then increase complexity.
     `.trim(),
   },
 ] as const;
-
-export type JournalEntryType = (typeof JOURNAL)[number];
