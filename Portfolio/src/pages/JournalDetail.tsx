@@ -15,6 +15,13 @@ export function JournalDetail() {
     );
   }
 
+  const commentMap = new Map(
+    (entry.comments ?? []).map((comment) => [
+      `${comment.paragraph}-${comment.wordIndex}`,
+      comment,
+    ] as const),
+  );
+
   return (
     <article className="max-w-3xl">
       <Link to="/journal" className="inline-flex items-center gap-2 text-sm underline mb-4">
@@ -25,9 +32,34 @@ export function JournalDetail() {
       <div className="text-xs text-muted-foreground mt-1">{new Date(entry.date).toLocaleDateString()}</div>
 
       <div className="prose prose-sm sm:prose-base dark:prose-invert mt-6">
-        {entry.content.split("\n\n").map((p, i) => (
-          <p key={i} className="leading-7 whitespace-pre-wrap">{p}</p>
-        ))}
+        {entry.content.split("\n\n").map((paragraph, paragraphIndex) => {
+          const tokens = paragraph.split(/(\s+)/);
+          let wordCount = 0;
+
+          return (
+            <p key={paragraphIndex} className="leading-7 whitespace-pre-wrap">
+              {tokens.map((token, tokenIndex) => {
+                if (/^\s+$/.test(token) || token === "") {
+                  return <span key={`${paragraphIndex}-space-${tokenIndex}`}>{token}</span>;
+                }
+
+                const comment = commentMap.get(`${paragraphIndex}-${wordCount}`);
+                const wordKey = `${paragraphIndex}-word-${tokenIndex}`;
+                const wordElement = comment ? (
+                  <span key={wordKey} className="annotation-word" tabIndex={0}>
+                    {token}
+                    <span className="annotation-tooltip">{comment.text}</span>
+                  </span>
+                ) : (
+                  <span key={wordKey}>{token}</span>
+                );
+
+                wordCount += 1;
+                return wordElement;
+              })}
+            </p>
+          );
+        })}
       </div>
     </article>
   );
