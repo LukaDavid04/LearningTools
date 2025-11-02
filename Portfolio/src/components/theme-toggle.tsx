@@ -21,6 +21,7 @@ const DEFAULT_ACCENT: DarkAccent = "onyx";
 export function ThemeToggle() {
   const [dark, setDark] = useState<boolean>(() => getInitialTheme());
   const [accent] = useState<DarkAccent>(DEFAULT_ACCENT);
+  const [btnAnimating, setBtnAnimating] = useState(false);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -43,6 +44,9 @@ export function ThemeToggle() {
       <button
         aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}
         onClick={() => {
+          // trigger a brief button animation
+          setBtnAnimating(true);
+          window.setTimeout(() => setBtnAnimating(false), 450);
           try {
             const body = document.body;
             const oldBg = getComputedStyle(body).backgroundColor;
@@ -56,16 +60,13 @@ export function ThemeToggle() {
               overlay.classList.add("animate");
             };
 
-            // Toggle theme, then start animation on the next frame to ensure
-            // CSS variables/classes have applied underneath the overlay.
+            // Toggle theme, then start animation next frame
             setDark((d) => !d);
             requestAnimationFrame(() => requestAnimationFrame(start));
 
             overlay.addEventListener(
               "animationend",
-              () => {
-                overlay.remove();
-              },
+              () => overlay.remove(),
               { once: true }
             );
           } catch {
@@ -73,7 +74,9 @@ export function ThemeToggle() {
             setDark((d) => !d);
           }
         }}
-        className="inline-flex items-center rounded-full border border-border/50 bg-background p-2.5 shadow-lg backdrop-blur-md transition hover:bg-secondary/80"
+        className={`inline-flex items-center rounded-full border border-border/50 bg-background p-2.5 shadow-lg backdrop-blur-md transition hover:bg-secondary/80 ${
+          btnAnimating ? "theme-toggle-animating" : ""
+        }`}
       >
         {dark ? <SunMedium className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
       </button>

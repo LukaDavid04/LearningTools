@@ -16,7 +16,7 @@ export type JournalEntryType = {
 
 export const JOURNAL: readonly JournalEntryType[] = [
   {
-    slug: "reliable-ai-features",
+    slug: "achieving-a-dream",
     title: "Achieving a Dream Goal",
     date: "2025-10-11",
     tags: ["LLM", "Evaluation", "RAG"],
