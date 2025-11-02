@@ -233,6 +233,36 @@ body::before {
   }
 }
 
+/* Theme wipe overlay: reveals new theme left→right */
+@keyframes theme-wipe {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+.theme-wipe-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  transform-origin: left center;
+  transform: scaleX(1);
+}
+
+.theme-wipe-overlay.animate {
+  animation: theme-wipe 700ms ease-in-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-wipe-overlay.animate {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+  }
+}
+
 @layer components {
   .annotation-word {
     position: relative;
