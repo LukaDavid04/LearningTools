@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import headshot from "@/assets/TennisHeadshot2.jpg";
+import headshotDark from "@/assets/TennisHeadshotDark.png";
 import { PROFILE } from "@/lib/data/profile";
 import { motion } from "framer-motion";
 
@@ -17,13 +18,22 @@ export function Home() {
             <div className="relative">
               <div className="h-48 sm:h-58 bg-gradient-to-br from-blue-500/40 via-violet-500/30 to-emerald-400/40 animate-shimmer bg-[length:200%_100%]" />{" "}
               <div className="absolute -bottom-10 left-6 h-40 w-40 sm:h-29 sm:w-29 rounded-3xl ring-2 ring-white/70 dark:ring-black/40 shadow-xl overflow-hidden flex items-center justify-center">
+                {/* Swap headshots based on theme using Tailwind dark: classes */}
                 <img
                   loading="lazy"
                   decoding="async"
                   fetchPriority="low"
                   src={headshot}
                   alt="Luka"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover block dark:hidden"
+                />
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
+                  src={headshotDark}
+                  alt="Luka"
+                  className="h-full w-full object-cover hidden dark:block"
                 />
               </div>
             </div>
