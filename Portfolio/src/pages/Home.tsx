@@ -61,7 +61,7 @@ export function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.35 }}
               >
-                <Card className="hover:shadow-[0_4px_16px_rgba(16,185,129,0.15)] transition-all duration-300">
+                <Card className="hover:shadow-[0_3px_12px_rgba(99,102,241,0.14)] transition-all duration-300">
                   <CardHeader className="pb-2">
                     <CardTitle className="text-base">{b.title}</CardTitle>
                   </CardHeader>
