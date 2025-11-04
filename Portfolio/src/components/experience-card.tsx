@@ -21,7 +21,7 @@ export function ExperienceCard({ exp }: { exp: Exp }) {
         aria-haspopup="dialog"
       >
         <Card
-          className="h-full transition-all duration-300 ease-out group-hover:-translate-y-0.5 group-hover:shadow-md group-hover:shadow-primary/5 group-focus-visible:-translate-y-0.5 group-focus-visible:shadow-md group-focus-visible:shadow-primary/5"
+          className="h-full transition-all duration-300 ease-out group-hover:-translate-y-0.5 group-hover:shadow-[0_3px_12px_rgba(99,102,241,0.14)] group-focus-visible:-translate-y-0.5 group-focus-visible:shadow-[0_3px_12px_rgba(99,102,241,0.14)]"
         >
           <CardHeader>
             <div className="flex items-start justify-between gap-3">

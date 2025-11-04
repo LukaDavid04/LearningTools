@@ -42,7 +42,7 @@ export function Home() {
                 {PROFILE.name}
               </h1>
               <p className="mt-1 text-muted-foreground">
-                {PROFILE.title} · {PROFILE.location}
+                {PROFILE.title} — {PROFILE.location}
               </p>
               <p className="mt-4 max-w-2xl leading-relaxed">
                 {PROFILE.summary}
@@ -88,13 +88,13 @@ export function Home() {
       {/* Right column */}
       <div className="space-y-6">
         {/* Get in touch nicer */}
-        <div className="rounded-2xl border bg-card/80 backdrop-blur shadow-sm">
+        <div className="rounded-2xl border bg-card shadow-md transition-all hover:-translate-y-0.5 hover:shadow-lg">
           <div className="p-6 pb-2">
             <h3 className="text-lg font-semibold tracking-tight">
               Get in touch
             </h3>
             <p className="text-sm text-muted-foreground mt-1">
-              I’m open to interesting problems, collaborative builds, and
+              I'm open to interesting problems, collaborative builds, and
               learning opportunities.
             </p>
 
@@ -130,3 +130,4 @@ export function Home() {
     </div>
   );
 }
+
