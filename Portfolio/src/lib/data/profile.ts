@@ -1,10 +1,10 @@
 export const PROFILE = {
   name: "Luka David",
-  title: "Software Engineer — AI, Cloud, Full-Stack",
+  title: "Software Engineer @ AiAware — AI, Cloud, Full-Stack",
   location: "Ottawa, ON",
   email: "LukaDavid307@gmail.com",
   summary:
-    "Developed AI-driven and full-stack solutions used by global enterprises and Fortune 500 companies. Skilled in building cloud-based, data-driven, and innovative tools with React, Azure, and .NET. Proven leadership and critical thinking skills. Lead Assistant for University of Ottawa's Gee-Gees Tennis.",
+    "Developed AI-driven and full-stack solutions used by global enterprises and Fortune 500 companies. Skilled in building cloud-based, data-driven, and innovative tools with React, Azure, and .NET. Proven leadership and critical thinking skills.\nLead Assistant Coach for uOttawa Gee-Gee's Varsity Tennis Team 🥈",
   keywords: [
     "Python/Java",
     "TypeScript",

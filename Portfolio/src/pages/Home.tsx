@@ -6,6 +6,7 @@ import { PROFILE } from "@/lib/data/profile";
 import { motion } from "framer-motion";
 
 export function Home() {
+  const summaryLines = PROFILE.summary.split("\n");
   return (
     <div className="grid lg:grid-cols-3 gap-6">
       <div className="lg:col-span-2 space-y-6">
@@ -37,7 +38,7 @@ export function Home() {
                 />
               </div>
             </div>
-            <CardContent className="pt-16 sm:pt-20">
+            <CardContent className="pt-14 sm:pt-16">
               <h1 className="text-3xl font-semibold tracking-tight">
                 {PROFILE.name}
               </h1>
@@ -45,7 +46,12 @@ export function Home() {
                 {PROFILE.title} — {PROFILE.location}
               </p>
               <p className="mt-4 max-w-2xl leading-relaxed">
-                {PROFILE.summary}
+                {summaryLines[0]}
+                {summaryLines.slice(1).map((line, i) => (
+                  <span key={i} className="block mt-4">
+                    {line}
+                  </span>
+                ))}
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {PROFILE.keywords.map((t) => (
@@ -130,4 +136,3 @@ export function Home() {
     </div>
   );
 }
-
