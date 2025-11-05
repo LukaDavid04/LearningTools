@@ -6,7 +6,8 @@ export const PROFILE = {
   summary:
     "Developed AI-driven and full-stack solutions used by global enterprises and Fortune 500 companies. Skilled in building cloud-based, data-driven, and innovative tools with React, Azure, and .NET. Proven leadership and critical thinking skills.\nLead Assistant Coach for uOttawa Gee-Gee's Varsity Tennis Team 🥈",
   keywords: [
-    "Python/Java",
+    "Python",
+    "Java",
     "TypeScript",
     "React",
     ".NET",

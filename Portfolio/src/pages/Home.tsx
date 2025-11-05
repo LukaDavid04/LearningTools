@@ -4,6 +4,7 @@ import headshot from "@/assets/TennisHeadshot2.jpg";
 import headshotDark from "@/assets/TennisHeadshotDark.png";
 import { PROFILE } from "@/lib/data/profile";
 import { motion } from "framer-motion";
+import { MapPin } from "lucide-react";
 
 export function Home() {
   const summaryLines = PROFILE.summary.split("\n");
@@ -18,6 +19,10 @@ export function Home() {
           <Card className="overflow-hidden">
             <div className="relative">
               <div className="h-48 sm:h-58 bg-gradient-to-br from-blue-500/40 via-violet-500/30 to-emerald-400/40 animate-shimmer bg-[length:200%_100%]" />{" "}
+              <div className="absolute right-5 top-5 flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-sm font-medium text-slate-700 shadow-sm backdrop-blur dark:bg-slate-950/70 dark:text-slate-100">
+                <MapPin className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                <span>{PROFILE.location}</span>
+              </div>
               <div className="absolute -bottom-10 left-6 h-40 w-40 sm:h-29 sm:w-29 rounded-3xl ring-2 ring-white/70 dark:ring-black/40 shadow-xl overflow-hidden flex items-center justify-center">
                 {/* Swap headshots based on theme using Tailwind dark: classes */}
                 <img
@@ -42,9 +47,7 @@ export function Home() {
               <h1 className="text-3xl font-semibold tracking-tight">
                 {PROFILE.name}
               </h1>
-              <p className="mt-1 text-muted-foreground">
-                {PROFILE.title} — {PROFILE.location}
-              </p>
+              <p className="mt-1 text-muted-foreground">{PROFILE.title}</p>
               <p className="mt-4 max-w-2xl leading-relaxed">
                 {summaryLines[0]}
                 {summaryLines.slice(1).map((line, i) => (
