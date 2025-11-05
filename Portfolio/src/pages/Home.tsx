@@ -65,7 +65,7 @@ export function Home() {
                           aria-label="2025 Men's Finalists"
                           title="2025 Men's Finalists"
                         >
-                          {silver}
+                          <span className="medal-shimmer">{"🥈"}</span>
                           <span className="annotation-tooltip top home-accent">{"2025 Men's Finalists"}</span>
                         </span>
                         {after}
@@ -120,7 +120,7 @@ export function Home() {
       {/* Right column */}
       <div className="space-y-6">
         {/* Get in touch nicer */}
-        <div className="rounded-2xl border bg-card shadow-md transition-all hover:-translate-y-0.5 hover:shadow-lg">
+        <div className="rounded-2xl border bg-card shadow-sm transition-shadow duration-200 hover:shadow-md">
           <div className="p-6 pb-2">
             <h3 className="text-lg font-semibold tracking-tight">
               Get in touch
@@ -133,7 +133,7 @@ export function Home() {
             <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-2">
               <a
                 href={`mailto:${PROFILE.email}`}
-                className="flex items-center justify-center gap-2 rounded-xl border px-4 py-2 text-sm hover:bg-secondary/70 transition"
+                className="flex items-center justify-center gap-2 rounded-xl border px-4 py-2 text-sm hover:bg-secondary/70"
               >
                 Email
               </a>
@@ -141,7 +141,7 @@ export function Home() {
                 href={PROFILE.links[0].href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 rounded-xl border px-4 py-2 text-sm hover:bg-secondary/70 transition"
+                className="flex items-center justify-center gap-2 rounded-xl border px-4 py-2 text-sm hover:bg-secondary/70"
               >
                 GitHub
               </a>
@@ -149,7 +149,7 @@ export function Home() {
                 href={PROFILE.links[1].href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 rounded-xl border px-4 py-2 text-sm hover:bg-secondary/70 transition"
+                className="flex items-center justify-center gap-2 rounded-xl border px-4 py-2 text-sm hover:bg-secondary/70"
               >
                 LinkedIn
               </a>

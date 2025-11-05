@@ -233,6 +233,50 @@ body::before {
   }
 }
 
+/* Subtle shimmer over medal emoji */
+@keyframes medal-shine {
+  0% { left: -130%; }
+  35% { left: 130%; }
+  100% { left: 130%; }
+}
+
+@layer components {
+  .medal-shimmer {
+    display: inline-block;
+    position: relative;
+    overflow: hidden; /* clip shine to emoji only */
+    /* allow full glyph box; avoid clipping */
+  }
+  .medal-shimmer::before {
+    content: "";
+    position: absolute;
+    top: -20%;
+    left: -120%;
+    width: 60%;
+    height: 140%;
+    transform: skewX(-20deg);
+    background: linear-gradient(
+      120deg,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,0.6) 45%,
+      rgba(255,255,255,0) 80%
+    );
+    mix-blend-mode: screen;
+    pointer-events: none;
+    z-index: 1;
+    animation: medal-shine 9000ms ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .medal-shimmer::before { animation: none; }
+}
+
+@layer components {
+  /* Disable medal shimmer in dark theme */
+  .dark .medal-shimmer::before { content: none; }
+}
+
 /* Home page tooltip variants */
 @layer components {
   /* Remove underline/highlight for specific instances */
