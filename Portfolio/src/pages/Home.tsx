@@ -50,11 +50,34 @@ export function Home() {
               <p className="mt-1 text-muted-foreground">{PROFILE.title}</p>
               <p className="mt-4 max-w-2xl leading-relaxed">
                 {summaryLines[0]}
-                {summaryLines.slice(1).map((line, i) => (
-                  <span key={i} className="block mt-4">
-                    {line}
-                  </span>
-                ))}
+                {summaryLines.slice(1).map((line, i) => {
+                  const silver = "🥈";
+                  if (line.includes(silver)) {
+                    const parts = line.split(silver);
+                    const before = parts[0] ?? "";
+                    const after = parts.slice(1).join(silver) ?? "";
+                    return (
+                      <span key={i} className="block mt-4">
+                        {before}
+                        <span
+                          className="annotation-word no-underline"
+                          tabIndex={0}
+                          aria-label="2025 Men's Finalists"
+                          title="2025 Men's Finalists"
+                        >
+                          {silver}
+                          <span className="annotation-tooltip top home-accent">{"2025 Men's Finalists"}</span>
+                        </span>
+                        {after}
+                      </span>
+                    );
+                  }
+                  return (
+                    <span key={i} className="block mt-4">
+                      {line}
+                    </span>
+                  );
+                })}
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {PROFILE.keywords.map((t) => (
