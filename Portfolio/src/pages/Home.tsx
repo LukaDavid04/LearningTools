@@ -120,7 +120,7 @@ export function Home() {
       {/* Right column */}
       <div className="space-y-6">
         {/* Get in touch nicer */}
-        <div className="rounded-2xl border bg-card shadow-sm transition-shadow duration-200 hover:shadow-md">
+        <div className="rounded-2xl border bg-card shadow-sm transition-shadow duration-200 hover:shadow-md dark:shadow-sm dark:transition-shadow dark:hover:shadow-[0_10px_24px_-20px_rgba(255,255,255,0.12)] dark:hover:ring-1 dark:hover:ring-white/10">
           <div className="p-6 pb-2">
             <h3 className="text-lg font-semibold tracking-tight">
               Get in touch
