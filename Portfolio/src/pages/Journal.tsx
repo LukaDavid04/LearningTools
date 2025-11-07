@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { JOURNAL } from "@/lib/data/journal";
 import { JournalEntry } from "@/components/journal-entry";
 import TypewriterGif from "@/assets/typewriter.gif";
+import AltTypewriterGif from "@/assets/alt_typewriter.gif";
 
 export function Journal() {
   const [q, setQ] = React.useState("");
@@ -43,7 +44,13 @@ export function Journal() {
               src={TypewriterGif}
               alt="Animated typewriter typing"
               loading="lazy"
-              className="w-full"
+              className="w-full dark:hidden"
+            />
+            <img
+              src={AltTypewriterGif}
+              alt="Animated typewriter typing (dark mode)"
+              loading="lazy"
+              className="hidden dark:block w-4/5 mx-auto rounded-xl shadow-lg ring-1 ring-white/10"
             />
           </figure>
           <div className="mt-4 space-y-2">
