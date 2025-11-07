@@ -47,9 +47,12 @@ export function Journal() {
             />
           </figure>
           <div className="mt-4 space-y-2">
-            <p className="text-base font-medium text-foreground">Transcribing handwritten entries</p>
+            <p className="text-base font-medium text-foreground">
+              Transcribing handwritten entries
+            </p>
             <p className="text-sm text-muted-foreground">
-              I'm still moving pages from my notebook into the digital journal. More stories will flutter in soon—thanks for checking back!
+              I'm still moving pages from my notebook into the digital journal.
+              More stories will appear soon, thanks for checking back!
             </p>
           </div>
         </div>
