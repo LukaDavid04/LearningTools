@@ -21,8 +21,8 @@ export function Projects() {
     <section>
       <header className="mb-10">
         <p className="text-xs uppercase tracking-widest text-muted-foreground">Passion Projects</p>
-        <h1 className="mt-1 text-3xl sm:text-4xl font-semibold tracking-tight">Editorial Chapters</h1>
-        <p className="mt-2 max-w-2xl text-sm text-muted-foreground">Hover for a teaser. Click a chapter to expand and read the story. Use the link to jump out to the project.</p>
+        <h1 className="mt-1 text-3xl sm:text-4xl font-semibold tracking-tight">Passion Projects</h1>
+        <p className="mt-2 max-w-2xl text-sm text-muted-foreground">Browse projects and expand any entry to read more. Use the link to visit the live site or repository.</p>
       </header>
 
       <div className="space-y-6">
@@ -38,12 +38,14 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.35 }}
-              className={`relative overflow-hidden rounded-2xl border p-6 sm:p-8 ${
+              className={`relative overflow-hidden rounded-2xl border p-6 sm:p-8 shadow-lg transition hover:shadow-xl hover:-translate-y-0.5 ring-1 ring-transparent hover:ring-transparent dark:hover:ring-violet-500/30 ${
                 alt ? 'bg-gradient-to-b from-background/65 to-background/35' : 'bg-gradient-to-b from-background to-background/60'
               }`}
             >
               {/* Hover teaser overlay */}
-              <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-[0.03]" style={{ background: 'radial-gradient(600px 200px at 80% -10%, var(--primary)/.6, transparent)' }} />
+              {/* Neutral overlay on light; violet tint only in dark */}
+              <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-[0.03] dark:opacity-0 dark:hover:opacity-[0.04]" style={{ background: 'radial-gradient(600px 200px at 80% -10%, transparent, transparent)' }} />
+              <div className="pointer-events-none absolute inset-0 hidden opacity-0 transition-opacity duration-300 dark:block dark:hover:opacity-[0.05]" style={{ background: 'radial-gradient(600px 200px at 80% -10%, rgba(139,92,246,0.6), transparent)' }} />
 
               <div className="flex items-start justify-between gap-4">
                 <div>
