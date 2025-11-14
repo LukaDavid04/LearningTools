@@ -7,6 +7,7 @@ import {
   Github,
   Linkedin,
   Mail,
+  FileDown,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 
@@ -62,6 +63,16 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-3 shrink-0">
+          <a
+            aria-label="Download Resume"
+            href="https://drive.google.com/file/d/12F5aa1GIbZ0HgEQ0_Glnl1K1hlIQ5eWa/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-3 py-2 border rounded-md text-sm font-medium hover:bg-secondary/60 transition"
+          >
+            <FileDown className="h-4 w-4" />
+            <span>Resume</span>
+          </a>
           <a
             aria-label="GitHub"
             href="https://github.com/LukaDavid04"
